@@ -1,0 +1,14 @@
+package edu.javacourse.studentorder.domain;
+
+public enum StudentOrderStatus {
+    START, CHECKED;
+
+    public static StudentOrderStatus fromValue(int value) {
+        for (StudentOrderStatus sos : StudentOrderStatus.values()) {
+            if (sos.ordinal() == value) { //если порядк равен передаваемой величине, то возвращаем
+                return sos;
+            }
+        }
+        throw new RuntimeException("Unknown value: " + value);
+    }
+}
